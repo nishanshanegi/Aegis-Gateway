@@ -1,0 +1,16 @@
+version: '3.8'
+
+services:
+  db:
+    image: ankane/pgvector:v0.5.1 # Postgres pre-configured with pgvector extension!
+    environment:
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: aegis_db
+    ports:
+      - "5432:5432"
+
+  redis:
+    image: redis:7-alpine
+    ports:
+      - "6379:6379"
